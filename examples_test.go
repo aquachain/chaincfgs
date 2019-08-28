@@ -24,4 +24,6 @@ func ExampleCoin() {
 		log.Fatalln(err)
 	}
 	fmt.Println(addr)
+	// Output:
+	// NDoRQT8LhDxVWGhB62zXbfX9Z3FNic1RMP
 }
