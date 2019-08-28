@@ -20,6 +20,8 @@
 package chaincfgs
 
 import (
+	"fmt"
+
 	"github.com/btcsuite/btcd/wire"
 
 	btcchaincfg "github.com/btcsuite/btcd/chaincfg"
@@ -28,6 +30,16 @@ import (
 )
 
 type Params = btcchaincfg.Params
+
+var ErrNotImplemented = fmt.Errorf("not implemented")
+
+func Coin(n string) (btcchaincfg.Params, error) {
+	c, ok := altcoins[n]
+	if !ok {
+		return btcchaincfg.Params{}, ErrNotImplemented
+	}
+	return Basic(c.toAlt(n)), nil
+}
 
 // Alt type is the minimal fields needed for what we need
 type Alt struct {
