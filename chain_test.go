@@ -11,8 +11,7 @@ import (
 var (
 	testPhrase = "tag volcano eight thank tide danger coast health above argue embrace heavy"
 	testPW     = ""
-
-	gold = map[string]string{
+	gold       = map[string]string{
 		"DOGED": "DNN9k4a15FmDWjdGYofWvuXqhwad68TvAm",
 		"MAZA":  "MR8DSEXmGs2jsQR13CKtdQyaJ2jVM2bTPH",
 		"BLK":   "BMg8pX5ZXMSqRZvqRhzvWHAuZRHuY3xvBm",
@@ -67,8 +66,8 @@ func testCoin(t *testing.T, cfg Params, expectAddr string, testName string) {
 		t.Logf("[%s] expected:\n%s\ngot:\n%s\n", testName, expectAddr, addr.String())
 		t.Error("not expect")
 	}
-	fmt.Printf("\"%s\": \"%s\",\n", testName, addr)
 
+	fmt.Printf("\"%s\": \"%s\",\n", testName, addr)
 }
 
 func TestFakecoin(t *testing.T) {
@@ -82,6 +81,7 @@ func TestAlts(t *testing.T) {
 }
 
 func TestBitcoin(t *testing.T) {
+
 }
 
 func TestLitecoin(t *testing.T) {
