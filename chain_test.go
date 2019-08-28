@@ -1,9 +1,11 @@
 package chaincfgs
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/aquachain/hdwallet"
+	"github.com/btcsuite/btcutil/hdkeychain"
 )
 
 var (
@@ -12,10 +14,25 @@ var (
 )
 
 func TestFakecoin(t *testing.T) {
-	_, err := hdwallet.NewFromMnemonicCfg(&FAKEMainnet, testPhrase, testPW)
+	cfg := &FAKEMainnet
+	seed, err := hdwallet.NewSeedFromMnemonic(testPhrase, testPW)
 	if err != nil {
 		t.Error(err)
 	}
+	key, err := hdkeychain.NewMaster(seed, cfg)
+	if err != nil {
+		t.Error(err)
+	}
+	addr, err := key.Address(cfg)
+	if err != nil {
+		t.Error(err)
+	}
+	if addr.String() != "FnPmeiMjLLYURLTnhKfRqfAZUy8HPL3HGt" {
+		t.Logf("expected:\n%s\ngot:\n%s\n", "FnPmeiMjLLYURLTnhKfRqfAZUy8HPL3HGt", addr.String())
+		t.FailNow()
+	}
+	fmt.Println("Address:", addr)
+
 }
 
 func TestBitcoin(t *testing.T) {
