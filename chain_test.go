@@ -13,8 +13,7 @@ var (
 	testPW     = ""
 )
 
-func TestFakecoin(t *testing.T) {
-	cfg := &FAKEMainnet
+func testCoin(t *testing.T, cfg *Params, expectAddr string) {
 	seed, err := hdwallet.NewSeedFromMnemonic(testPhrase, testPW)
 	if err != nil {
 		t.Error(err)
@@ -27,18 +26,19 @@ func TestFakecoin(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	if addr.String() != "FnPmeiMjLLYURLTnhKfRqfAZUy8HPL3HGt" {
-		t.Logf("expected:\n%s\ngot:\n%s\n", "FnPmeiMjLLYURLTnhKfRqfAZUy8HPL3HGt", addr.String())
+	if addr.String() != expectAddr {
+		t.Logf("expected:\n%s\ngot:\n%s\n", expectAddr, addr.String())
 		t.FailNow()
 	}
 	fmt.Println("Address:", addr)
 
 }
 
+func TestFakecoin(t *testing.T) {
+	testCoin(t, &FAKEMainnet, "FnPmeiMjLLYURLTnhKfRqfAZUy8HPL3HGt")
+}
 func TestBitcoin(t *testing.T) {
-	t.Skip()
 }
 
 func TestLitecoin(t *testing.T) {
-	t.Skip()
 }
