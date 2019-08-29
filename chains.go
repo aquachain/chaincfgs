@@ -29,6 +29,14 @@ import (
 	ltcchaincfg "github.com/ltcsuite/ltcd/chaincfg"
 )
 
+var AllCoins []btcchaincfg.Params
+
+func init() {
+	for i := range altcoins {
+		AllCoins = append(AllCoins, Basic(Alt(altcoins[i].toAlt(i))))
+	}
+}
+
 type Params = btcchaincfg.Params
 
 var ErrNotImplemented = fmt.Errorf("not implemented")
