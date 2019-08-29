@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/aquachain/hdwallet"
+	"github.com/btcsuite/btcutil"
 	"github.com/btcsuite/btcutil/hdkeychain"
 )
 
@@ -49,6 +50,29 @@ var (
 	}
 )
 
+func getKey(cfg Params, child uint32) *hdkeychain.ExtendedKey {
+	seed, err := hdwallet.NewSeedFromMnemonic(testPhrase, testPW)
+	if err != nil {
+		panic(err)
+	}
+	key, err := hdkeychain.NewMaster(seed, &cfg)
+	if err != nil {
+		panic(err)
+	}
+	key, err = key.Child(child)
+	if err != nil {
+		panic(err)
+	}
+	return key
+}
+func getAddress(cfg Params, child uint32) *btcutil.AddressPubKeyHash {
+	key := getKey(cfg, child)
+	addr, err := key.Address(&cfg)
+	if err != nil {
+		panic(err)
+	}
+	return addr
+}
 func testCoin(t *testing.T, cfg Params, expectAddr string, testName string) {
 	seed, err := hdwallet.NewSeedFromMnemonic(testPhrase, testPW)
 	if err != nil {
@@ -78,11 +102,4 @@ func TestAlts(t *testing.T) {
 	for i := range altcoins {
 		testCoin(t, Basic(Alt(altcoins[i].toAlt(i))), gold[i], i)
 	}
-}
-
-func TestBitcoin(t *testing.T) {
-
-}
-
-func TestLitecoin(t *testing.T) {
 }
