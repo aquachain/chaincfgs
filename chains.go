@@ -25,8 +25,8 @@ import (
 	"github.com/btcsuite/btcd/wire"
 
 	btcchaincfg "github.com/btcsuite/btcd/chaincfg"
-	dcrchaincfg "github.com/decred/dcrd/chaincfg"
-	ltcchaincfg "github.com/ltcsuite/ltcd/chaincfg"
+	//dcrchaincfg "github.com/decred/dcrd/chaincfg"
+	//ltcchaincfg "github.com/ltcsuite/ltcd/chaincfg"
 )
 
 var AllCoins []btcchaincfg.Params
@@ -97,14 +97,14 @@ var (
 	BTCTestnet3 = btcchaincfg.TestNet3Params
 	BTCSimnet   = btcchaincfg.SimNetParams
 	BTCRegnet   = btcchaincfg.RegressionNetParams
-	LTCMainnet  = ltcchaincfg.MainNetParams
+	/*LTCMainnet  = ltcchaincfg.MainNetParams
 	DCRMainnet  = dcrchaincfg.MainNetParams
 	LTCTestnet4 = (ltcchaincfg.TestNet4Params)
 	LTCSimnet   = (ltcchaincfg.SimNetParams)
 	LTCRegnet   = (ltcchaincfg.RegressionNetParams)
 	DCRTestnet3 = (dcrchaincfg.TestNet3Params)
 	DCRSimnet   = (dcrchaincfg.SimNetParams)
-	DCRRegnet   = (dcrchaincfg.RegNetParams)
+	DCRRegnet   = (dcrchaincfg.RegNetParams) */
 )
 
 // if the altcoin doesn't have a chaincfg package, we can make a basic one containing only relevant fields
