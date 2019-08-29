@@ -2,8 +2,6 @@ github.com/aead/siphash v1.0.1/go.mod h1:Nywa3cDsYNNK3gaciGTWPwHt0wlpNV15vwmswBA
 github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412/go.mod h1:WPjqKcmVOxf0XSf3YxCJs6N6AOSrOx3obionmG7T0y0=
 github.com/allegro/bigcache v1.2.1 h1:hg1sY1raCwic3Vnsvje6TT7/pnZba83LeFck5NrFKSc=
 github.com/allegro/bigcache v1.2.1/go.mod h1:Cb/ax3seSYIx7SuZdm2G2xzfwmv3TPSk2ucNfQESPXM=
-github.com/aquachain/hdwallet v0.0.1 h1:mT5NlNomARvU+bYonZNr1+nOFYcOk6vAzsNqh6lUqds=
-github.com/aquachain/hdwallet v0.0.1/go.mod h1:lgGXm3OZWRPGt/mkDtCxzBnqUDUVxGPOsVhAlk9pfwQ=
 github.com/aquachain/hdwallet v0.0.2 h1:eCf1DglpfVLfoc2YNlJtLG9Fyqsa6nXIdPnHu9mvvbU=
 github.com/aquachain/hdwallet v0.0.2/go.mod h1:lgGXm3OZWRPGt/mkDtCxzBnqUDUVxGPOsVhAlk9pfwQ=
 github.com/aristanetworks/goarista v0.0.0-20180627184309-2c5933638c5e h1:GfUJvUv57+W9J0lpQB5/hsdv43F46ffAJewlooRGXXo=
@@ -13,6 +11,7 @@ github.com/aristanetworks/goarista v0.0.0-20190712234253-ed1100a1c015/go.mod h1:
 github.com/btcsuite/btcd v0.0.0-20180531025944-86fed781132a/go.mod h1:Dmm/EzmjnCiweXmzRIAiUWCInVmPgjkzgv5k4tVyXiQ=
 github.com/btcsuite/btcd v0.0.0-20190824003749-130ea5bddde3 h1:A/EVblehb75cUgXA5njHPn0kLAsykn6mJGz7rnmW5W0=
 github.com/btcsuite/btcd v0.0.0-20190824003749-130ea5bddde3/go.mod h1:3J08xEfcugPacsc34/LKRU2yO7YmuT8yt28J8k2+rrI=
+github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f h1:bAs4lUbRJpnnkd9VhRV3jjAVU7DJVjMaK+IsvSeZvFo=
 github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f/go.mod h1:TdznJufoqS23FtqVCzL0ZqgP5MqXbb4fg/WgDys70nA=
 github.com/btcsuite/btcutil v0.0.0-20180524032703-d4cc87b86016/go.mod h1:+5NJ2+qvTyV9exUAL/rxXi3DcLg2Ts+ymUAY5y4NvMg=
 github.com/btcsuite/btcutil v0.0.0-20190425235716-9e5f4b9a998d h1:yJzD/yFppdVCf6ApMkVy8cUxV0XrxdP9rVf6D87/Mng=
